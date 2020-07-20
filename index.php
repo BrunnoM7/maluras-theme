@@ -1,8 +1,11 @@
-<?php get_header(); ?>
+<?php 
+  $css_especifico = 'index';
+  require_once('header.php'); 
+?>
 
 <main class="home-main">
   <div class="container">
-    <h1>Bem-vindo ao Maluras</h1>
+    
     <ul class="imoveis-listagem">
       <?php
 

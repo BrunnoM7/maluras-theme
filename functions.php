@@ -31,4 +31,18 @@ function cadastrando_post_type_imoveis() {
   register_post_type( 'imovel' , $args );
 }
 
+function registrar_menu_navegacao() {
+  register_nav_menu('header-menu', 'main-menu');
+
+}
+
+function geraTitulo() {
+  bloginfo('name');  
+  if( !is_home() ) { 
+    echo ' | ';
+    the_title(); 
+  }  
+}
+
 add_action( 'init', 'cadastrando_post_type_imoveis' );
+add_action( 'init', 'registrar_menu_navegacao' );

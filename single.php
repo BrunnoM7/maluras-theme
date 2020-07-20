@@ -1,5 +1,7 @@
-<?php get_header( ); ?>
-
+<?php 
+  $css_especifico = 'single';
+  require_once('header.php'); 
+?>
 
 <main>
   <article>
