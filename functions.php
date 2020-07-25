@@ -41,8 +41,32 @@ function geraTitulo() {
   if( !is_home() ) { 
     echo ' | ';
     the_title(); 
-  }  
+  }
 }
+
+function registra_taxonomia_localizacao() {
+
+  $nomeSingular = 'Localização';
+  $nomePlural = 'Localizações';
+
+  $labels = array(
+    'name' => $nomePlural,
+    'name_singular' => $nomeSingular,
+    'edit_item' => 'Editar ' . $nomeSingular,
+    'add_new_item' => 'Adicionar nova ' . $nomeSingular,
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'hierarchical' => true
+  );
+
+  register_taxonomy( 'localizacao', 'imovel', $args );
+
+}
+
 
 add_action( 'init', 'cadastrando_post_type_imoveis' );
 add_action( 'init', 'registrar_menu_navegacao' );
+add_action( 'init', 'registra_taxonomia_localizacao' );
